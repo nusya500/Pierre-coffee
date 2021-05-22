@@ -1,0 +1,52 @@
+.item {
+    width: 23%;
+    margin-right: 2.67%;
+    margin-bottom: 2.67%;
+    z-index: 1;
+    position: relative;
+}
+
+.item:nth-child(4n) {
+    margin-right: 0;
+}
+
+.item img {
+    width: 100%;
+    z-index: -1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.desc {
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    padding: 15px 0 0 10px;
+}
+
+.title {
+    display: inline-block;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add > button {
+    font-size: 16px;
+    background: #2AD31B;
+    padding: 15px;
+    color: #fff;
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}

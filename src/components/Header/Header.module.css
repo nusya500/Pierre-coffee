@@ -1,0 +1,22 @@
+.header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block > h2 {
+    font-size: 40px;
+    color: #fff;
+}
+
+.icon {
+    color: #fff;
+    font-size: 40px;
+}

@@ -1,0 +1,29 @@
+.category {
+    width: 23%;
+    margin-right: 2.67%;
+    margin-bottom: 2.67%;
+    z-index: 1;
+    position: relative;
+}
+
+.category:nth-child(4n) {
+    margin-right: 0;
+}
+
+.category > img {
+    width: 100%;
+    z-index: -1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.title {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    padding: 15px 0;
+    text-align: center;
+    color: #000;
+    font-size: 22px;
+}
