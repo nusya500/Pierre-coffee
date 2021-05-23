@@ -8,7 +8,7 @@ export const MainPage = () => {
     return (
         <div className={Styles.mainPage}>
             <div className={Styles.block}>
-                <img src={Logo} alt="logo" />
+                <img data-aos="zoom-in" src={Logo} alt="logo" />
                 <NavLink to="/menu">menu</NavLink>
             </div>
         </div>

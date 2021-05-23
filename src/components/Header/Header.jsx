@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, useHistory } from "react-router-dom"
 import Styles from './Header.module.css'
 
-export const Header = ({ heading, order }) => {
+export const Header = ({ heading, order, setShow }) => {
     let history = useHistory()
     const goToPreviousPath = () => {
         history.goBack()
@@ -18,11 +18,19 @@ export const Header = ({ heading, order }) => {
                         </span>
                     </button>
                     <h2>{ heading }</h2>
-                    <NavLink to="/cart" style={order === false ? {transform: 'scale(0)'} : {}}>
+                    <NavLink to="/cart" style={order === false ? {display: 'none'} : {}}>
                         <span className={`material-icons ${Styles.icon}`}>
                             receipt_long
                         </span>
                     </NavLink>
+                    {
+                        order === false ?
+                        <button onClick={() => {setShow(true)}}>
+                            <span className={`material-icons ${Styles.icon}`}>
+                                cancel
+                            </span>
+                        </button> : ''
+                    }
                 </div>                
             </div>
         </header>

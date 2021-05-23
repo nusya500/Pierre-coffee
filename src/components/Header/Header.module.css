@@ -20,3 +20,13 @@
     color: #fff;
     font-size: 40px;
 }
+
+@media screen and (max-width: 400px) {
+    .block > h2 {
+        font-size: 30px;
+    }
+    
+    .icon {
+        font-size: 30px;
+    }
+}

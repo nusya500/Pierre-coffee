@@ -7,4 +7,5 @@
 
 .block {
     display: flex;
+    flex-wrap: wrap;
 }

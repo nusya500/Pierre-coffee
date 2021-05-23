@@ -1,6 +1,6 @@
 .mainPage {
     height: 100vh;
-    background: #462815;
+    background: #d89f64;
     display: grid;
     place-items: center;
 }
@@ -21,4 +21,18 @@
     text-transform: uppercase;
     margin-top: 30px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+    .block {
+        padding: 0 20px;
+    }
+    
+    .block > img {
+        width: 100%;
+    }
+
+    .block > a {
+        font-size: 60px;
+    }
 }

@@ -20,9 +20,9 @@ export const MenuPage = () => {
                         {
                             data.filter((el) => 
                                 el.subCategoryStatus === false
-                            ).map((el) => {
+                            ).map((el, i) => {
                                 return (
-                                    <Category key={ el.id } data={ el } />
+                                    <Category key={ i } data={ el } i={ i } />
                                 )
                             })
                         }

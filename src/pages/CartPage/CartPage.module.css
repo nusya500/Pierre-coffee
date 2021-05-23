@@ -2,7 +2,7 @@
     height: 100%;
     min-height: 100vh;
     max-height: 100%;
-    background: #462815;
+    background: #d89f64;
 }
 
 
@@ -12,6 +12,7 @@
     margin-bottom: 20px;
     padding: 20px;
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
     border-radius: 10px;
 }
@@ -22,4 +23,29 @@
 
 .item > p {
     font-size: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total > p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.empty > span {
+    margin-right: 15px;
+}
+
+.icon {
+    font-size: 40px;
 }

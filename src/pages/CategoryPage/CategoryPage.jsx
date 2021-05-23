@@ -34,8 +34,8 @@ export const CategoryPage = () => {
                             <div className={Styles.block}>
                                 {
                                     data.subCategory !== undefined ?
-                                    data.subCategory.map((el) => {
-                                        return <Category key={el.id} data={el} />
+                                    data.subCategory.map((el, i) => {
+                                        return <Category key={el.id} data={el} i={ i } />
                                     }) : ''
                                 }
                             </div>

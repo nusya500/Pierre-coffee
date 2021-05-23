@@ -5,6 +5,7 @@ import { MainPage } from './pages/MainPage/MainPage'
 import { MenuPage } from './pages/MenuPage/MenuPage'
 import { CategoryPage } from './pages/CategoryPage/CategoryPage'
 import { CartPage } from './pages/CartPage/CartPage'
+// import { ItemPage } from './pages/ItemPage/ItemPage'
 
 export const useRoutes = () => {
     return (
@@ -22,6 +23,9 @@ export const useRoutes = () => {
                 <Route path="/cart" exact>
 					<CartPage />
                 </Route>
+                {/* <Route path="/:category/:item" exact>
+					<ItemPage />
+                </Route> */}
             </Switch>
         </div>
     )
