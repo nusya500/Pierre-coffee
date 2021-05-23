@@ -12,6 +12,7 @@
 }
 
 .block > h2 {
+    text-align: center;
     font-size: 40px;
     color: #fff;
 }
@@ -23,10 +24,10 @@
 
 @media screen and (max-width: 400px) {
     .block > h2 {
-        font-size: 30px;
+        font-size: 25px;
     }
     
     .icon {
-        font-size: 30px;
+        font-size: 25px;
     }
 }

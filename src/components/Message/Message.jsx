@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from './Message.module.css'
 
-export const Message = ({ text, data, func, setOrders, setCount, setShow }) => {
+export const Message = ({ text, data, func, setOrders, setShow }) => {
     console.log(data)
     return (
         <div className={Styles.message} data-aos="fade-down">

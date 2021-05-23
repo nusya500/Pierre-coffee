@@ -71,6 +71,7 @@ export const CartPage = () => {
                     text={ 'Вы уверенны, что хотите удалить заказ?' }
                     data={ [] }
                     func={ cancelOrder }
+                    setShow={ setShow }
                      /> :
                 ''
             }
