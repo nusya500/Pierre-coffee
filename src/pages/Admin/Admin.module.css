@@ -1,0 +1,178 @@
+.admin {
+    padding-bottom: 30px;
+}
+
+.header {
+    height: 100px;
+    background: #d89f64;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: #fff;
+    font-size: 25px;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-grid;
+    place-items: center;
+    color: #fff;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+.message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    z-index: 11;
+}
+
+.active {
+    display: block;
+}
+
+.text {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.submit {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    background: #d89f64;
+    border-radius: 5px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+    margin-right: 10px;
+}
+
+.submit:nth-child(3) {
+    margin-right: 0;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+.form:last-child {
+    margin-bottom: 0;
+}
+
+.title {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.input {
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-border: none;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #eee;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 5px 0px#ccc;
+    width: 100%;
+    padding: 15px;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.input:focus::placeholder {
+    color: #eee;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.select {
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-border: none;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #eee;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 5px 0px#ccc;
+    width: 100%;
+    padding: 15px;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    color: #000;
+    transform: rotate(90deg) translateX(-100%);
+}
+
+@media screen and (max-width: 500px) {
+    .message {
+        width: 65%;
+    }
+    .form {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .text {
+        font-size: 18px;
+    }
+    .message {
+        padding: 60px 40px;
+    }
+    .submit {
+        padding: 13px 25px;
+    }
+}

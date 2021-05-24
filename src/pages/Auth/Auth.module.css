@@ -1,0 +1,127 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.block {
+    text-align: center;
+    width: 400px;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0px 0px 10px 0px #999;
+    border-radius: 10px;
+}
+
+.heading {
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBlock {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input {
+    -webkit-user-select: text;
+    user-select: text;
+    font-size: 16px;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-border: none;
+    border: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border-bottom: 2px solid #000;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 15px 10px 15px;
+    color: #585858;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.input::placeholder {
+    color: #d89f64;
+    transition: all .5s;
+    text-transform: capitalize;
+}
+
+.input:focus::placeholder {
+    color: #fff;
+}
+
+.label {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    cursor: text;
+    transition: all .5s;
+    color: #d89f64;
+    opacity: 0;
+}
+
+.input:focus + .label {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: translateY(-85%);
+    font-weight: bold;
+    opacity: 1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.submit {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 30px;
+    background: #d89f64;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.submit:nth-child(2) {
+    margin-right: 0;
+}
+
+.warn {
+    float: left;
+    color: #999;
+}
+
+.dn {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .block {
+        width: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+}
