@@ -54,7 +54,7 @@
 }
 
 .input::placeholder {
-    color: #d89f64;
+    color: #d3a26d;
     transition: all .5s;
     text-transform: capitalize;
 }
@@ -71,7 +71,7 @@
     transform: translateY(-50%);
     cursor: text;
     transition: all .5s;
-    color: #d89f64;
+    color: #d3a26d;
     opacity: 0;
 }
 
@@ -95,7 +95,7 @@
     font-size: 18px;
     text-decoration: none;
     padding: 15px 30px;
-    background: #d89f64;
+    background: #d3a26d;
     color: #fff;
     border-radius: 6px;
 }

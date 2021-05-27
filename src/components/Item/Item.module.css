@@ -25,6 +25,10 @@
     padding: 15px 0 0 10px;
 }
 
+.desc > p {
+    padding-left: 6px;
+}
+
 .title {
     display: inline-block;
     color: #000;

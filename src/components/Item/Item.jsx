@@ -1,28 +1,31 @@
 import React, { useState } from 'react'
+import { useSuccess } from './../../hooks/success.hook'
 import Styles from './Item.module.css'
 
 import Img from './../../assets/images/item.png'
 
-export const Item = ({ data, categoryId, orders, setOrders, setShow, i }) => {
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
+
+export const Item = ({ data, i }) => {
+    toast.configure({
+        position: 'top-right',
+        autoClose: 3000,
+        draggable: true
+    })
+
     const [count, setCount] = useState(1)
     const [full, setFull] = useState(null)
 
-    // console.log(orders.reverse().filter((v, i, a) => a.findIndex(t => (t.data === v.data)) === i))
     const showMore = (i) => {
         setFull(i)
     }
 
-    const addProduct = () => {
-        setOrders([...orders, {count: count, data: data}])
-        setShow(true)
-    }
-    
-    const decreaseCount = () => {
-        count !== 1 ? setCount(count - 1) : setCount(1)
-    }
+    const successMessage = useSuccess()
 
-    const increaseCount = () => {
-        setCount(count + 1)
+    const orderProduct = (name, id) => {
+        localStorage.setItem(`order${id}`, JSON.stringify({ data: data, count: count }))
+        successMessage(`Заказ "${name}" добавлен в Ваши заказы`)
     }
 
     return (
@@ -34,12 +37,12 @@ export const Item = ({ data, categoryId, orders, setOrders, setShow, i }) => {
                 </button>
                 <p>{ data.price } сом</p>
                 <div className={Styles.add}>
-                    <p className={Styles.count} onChange={addProduct}>
-                        <button onClick={() => {decreaseCount()}}>{'<'}</button>
+                    <p className={Styles.count}>
+                        <button onClick={() => {count !== 1 ? setCount(count - 1) : setCount(1)}}>{'<'}</button>
                         { count }
-                        <button onClick={() => {increaseCount()}}>{'>'}</button>
+                        <button onClick={() => {setCount(count + 1)}}>{'>'}</button>
                     </p>
-                    <button onClick={() => {addProduct()}}>Заказать</button>
+                    <button onClick={() => {orderProduct(data.name, data.id)}}>Заказать</button>
                 </div>
             </div>
             <div className={`${Styles.full} ${full === data.id ? Styles.active : ''}`}>

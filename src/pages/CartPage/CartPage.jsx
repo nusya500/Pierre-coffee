@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Header } from '../../components/Header/Header'
 import { Message } from '../../components/Message/Message'
 import Styles from './CartPage.module.css'
 
 export const CartPage = () => {
-    const [data, setData] = useState({
-        orders: []
-    })
     const [show, setShow] = useState(false)
+
+    const template = /(order)/
+    const items = Object.keys(localStorage).filter(el => el.match(template))
+    const orders = items.map(el => {
+        return JSON.parse(localStorage[el])
+    })
+
+    console.log(orders)
 
     let history = useHistory()
 
-    useEffect(() => {
-        let mounted = true
-        try {
-            if (mounted) {
-                if (JSON.parse(localStorage.getItem('orders')) !== null) {
-                    setData(JSON.parse(localStorage.getItem('orders')))
-                }
-            }
-        } catch (e) {}
-        return () => mounted = false
-    }, [])
-
     const cancelOrder = () => {
         history.goBack()
-        localStorage.removeItem('orders')
+        items.map(el => {
+            localStorage.removeItem(el)
+            return ''
+        })
     }
 
     let total = []
@@ -36,7 +32,7 @@ export const CartPage = () => {
             <Header previous={'menu'} heading={ 'Ваши заказы' } order={false} setShow={setShow} />
             <div className="container">
                 {
-                    data.orders.length === 0 ?
+                    orders.length === 0 ?
                     <div className={Styles.empty}>
                         <span className={`material-icons ${Styles.icon}`}>
                             search_off
@@ -45,8 +41,8 @@ export const CartPage = () => {
                     </div> :
                     <div className={Styles.block}>
                         {
-                            data.orders ?
-                            data.orders.map(({ count, data }, i) => {
+                            orders ?
+                            orders.map(({ count, data }, i) => {
                                 total.push(count * data.price)
                                 return (
                                     <div key={ i } className={Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
@@ -59,7 +55,7 @@ export const CartPage = () => {
                     </div>
                 }
                 {
-                    data.orders.length !== 0 ?
+                    orders.length !== 0 ?
                     <div className={Styles.total}>
                         <p>Итого: {total.reduce((a, b) => a + b, 0)} сом</p>
                     </div> : ''

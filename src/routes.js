@@ -1,6 +1,7 @@
 import React from 'react'
-import Styles from './App.module.css'
 import { Switch, Route } from 'react-router-dom'
+import { useGet } from './hooks/get.hook'
+import Styles from './App.module.css'
 import { MainPage } from './pages/MainPage/MainPage'
 import { MenuPage } from './pages/MenuPage/MenuPage'
 import { CategoryPage } from './pages/CategoryPage/CategoryPage'
@@ -10,8 +11,13 @@ import { Auth } from './pages/Auth/Auth'
 // import { ItemPage } from './pages/ItemPage/ItemPage'
 
 export const useRoutes = (isAuthentificated) => {
+    const { data } = useGet('main/getUpdate')
+    const categoryData = data.allCategories.filter(
+        (el) => el.subCategoryStatus === false
+    )
+
     if (isAuthentificated) {
-        return(
+        return (
             <div className={Styles.main}>
                 <Admin />
             </div>
@@ -22,16 +28,16 @@ export const useRoutes = (isAuthentificated) => {
         <div className={Styles.routes}>
             <Switch>
                 <Route path="/" exact>
-					<MainPage />
+                    <MainPage />
                 </Route>
                 <Route path="/menu" exact>
-					<MenuPage />
+                    <MenuPage categoryData={categoryData} />
                 </Route>
                 <Route path="/menu/:category">
-					<CategoryPage />
+                    <CategoryPage data={data.allCategories} />
                 </Route>
                 <Route path="/cart" exact>
-					<CartPage />
+                    <CartPage />
                 </Route>
                 <Route path="/admin" exact>
                     <Auth />

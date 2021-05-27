@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from './Message.module.css'
 
-export const Message = ({ text, data, func, setOrders, setShow }) => {
+export const Message = ({ text, data, func, setShow }) => {
     console.log(data)
     return (
         <div className={Styles.message} data-aos="fade-down">
@@ -22,7 +22,7 @@ export const Message = ({ text, data, func, setOrders, setShow }) => {
                 }
                 <div className={Styles.buttons}>
                     <button onClick={() => {func()}}>Да</button>
-                    <button onClick={() => {setShow(false); setOrders([])}}>Нет</button>
+                    <button onClick={() => {setShow(false)}}>Нет</button>
                 </div>
             </div>
         </div>

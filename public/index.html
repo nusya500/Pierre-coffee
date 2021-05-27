@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,13 +22,132 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>React App</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #loader {
+      background: #d3a26d;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .bg {
+      fill: #d3a26d;
+    }
+
+    .steam {
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2px;
+    }
+
+    .cup {
+      fill: #fff;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+    }
+
+    .liquid {
+      fill: #351f02;
+      stroke: #351f02;
+      stroke-miterlimit: 10;
+    }
+
+    .sleeve {
+      fill: #006838;
+      position: relative;
+    }
+
+    .lid {
+      fill: #202020;
+      stroke: #202020;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+    }
+
+    .liquid {
+      transform: translateX(100%);
+      transform: translateY(100%);
+      opacity: 0.8;
+      animation: fill 3.2s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fill {
+      0% {
+        opacity: 0.5;
+        transform: translateY(100%);
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* ANIMATE STEAM */
+    .steam {
+      stroke: #f7f7f7;
+      stroke-width: 1.5px;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      opacity: 0.2;
+      animation: steamAnimate 2.5s;
+      animation-delay: 3.3s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes steamAnimate {
+      0% {
+        stroke-dashoffset: 200;
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <div id="loader">
+    <svg version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 501 501"
+      style="enable-background:new 0 0 501 501;" xml:space="preserve">
+      <defs>
+        <mask id="liquidMasked">
+          <path fill="#FFF"
+            d="M294.3,377.1c-32.8,9.4-68.2,9.3-101-0.2c-7.1-60.7-14.1-119.7-21.5-175.6c48.3,0,96.5,0,144.8,0 C309,257.2,301.7,316.3,294.3,377.1z" />
+        </mask>
+      </defs>
+      <rect x="0.5" y="0.5" class="bg" width="500" height="500" />
+      <path class="cup" d="M301.4,382.2c-37.4,10.4-77.9,10.3-115.2-0.3c-8.1-66.7-16.1-131.6-24.5-193c55.1,0,110.1,0,165.2,0
+C318.1,250.3,309.8,315.3,301.4,382.2z" />
+      <g id="coffeeMasked" mask="url(#liquidMasked)">
+        <path class="liquid"
+          d="M293.8,376.6c-32.8,9.4-68.2,9.3-101-0.2c-7.1-60.7-14.1-119.7-21.5-175.6c0,0,12-7.1,31.3-0.4
+c29.8,10.3,32.7-0.2,48.7-0.2c27.4,0,29.2,8.8,44.7,1.3c14.7-7.1,20.2-0.7,20.2-0.7C308.5,256.7,301.2,315.8,293.8,376.6z" />
+      </g>
+      <g class="steam">
+        <path d="M308.5,169c0,0-16.5-17-13-32.5s22-5.5,13.5,6c-7.9,10.6-23.8-6.9-12-21.8c11.5-14.5,10.7-22,10-24.8
+c-5-18.4-18.6-5.8-12.6-1.1c9.4,7.1,15.2-16.5,13.2-24.5" />
+      </g>
+      <path class="sleeve" d="M310.2,334.2c-44,5.4-88.4,5.4-132.4,0c-3.2-27.8-6.4-55.7-9.6-83.6c50.4,7.2,101.6,7.2,152,0
+C316.9,278.4,313.5,306.3,310.2,334.2z" />
+      <path class="lid" d="M337.2,187v13.8c0,0-15.8,3.7-92,3.7s-92-3.7-92-3.7V187c0-1.8,1.4-3.2,3.2-3.2h5.8v-11.5
+c0-3.6,2.9-6.5,6.5-6.5h131.8l3.4,2.2c1.1,0.7,2.5,0.7,3.7,0l3.7-2.2h10.9c3.3,0,6.1,2.7,6.1,6.1v11.9h5.8
+C335.8,183.8,337.2,185.2,337.2,187z" />
+    </svg>
+  </div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -40,5 +157,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

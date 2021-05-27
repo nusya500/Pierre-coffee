@@ -80,6 +80,10 @@ button {
     cursor: default;
 }
 
+.hideLoader {
+    display: none !important;
+}
+
 @media screen and (max-width: 1280px) {
     .container {
         width: 100%;
