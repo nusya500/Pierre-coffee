@@ -12,7 +12,7 @@ import { Auth } from './pages/Auth/Auth'
 
 export const useRoutes = (isAuthentificated) => {
     const { data } = useGet('main/getUpdate')
-    const categoryData = data.allCategories.filter(
+    const categoryData = data.filter(
         (el) => el.subCategoryStatus === false
     )
 
@@ -34,7 +34,7 @@ export const useRoutes = (isAuthentificated) => {
                     <MenuPage categoryData={categoryData} />
                 </Route>
                 <Route path="/menu/:category">
-                    <CategoryPage data={data.allCategories} />
+                    <CategoryPage data={data} />
                 </Route>
                 <Route path="/cart" exact>
                     <CartPage />

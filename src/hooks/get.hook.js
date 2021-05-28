@@ -3,7 +3,7 @@ import { useHttp } from "./http.hook"
 
 export const useGet = (url) => {
     const { loading, request, API_URL } = useHttp()
-    const [data, setData] = useState({allCategories: []})
+    const [data, setData] = useState([])
 
     useEffect(() => {
         let mounted = true
