@@ -25,6 +25,11 @@ export const CartPage = () => {
         })
     }
 
+    const deleteOrderItem = (id) => {
+        history.goBack()
+        localStorage.removeItem(`order${id}`)
+    }
+
     let total = []
 
     return (
@@ -47,7 +52,14 @@ export const CartPage = () => {
                                 return (
                                     <div key={ i } className={Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
                                         <h3>{ data.name }</h3>
-                                        <p>{ count } x { data.price } сом = { count * data.price } сом</p>
+                                        <div className={Styles.right}>
+                                            <p>{ count } x { data.price } сом = { count * data.price } сом</p>
+                                            <button onClick={() => {deleteOrderItem(data.id)}}>
+                                                <span className={`material-icons ${Styles.delete}`}>
+                                                    delete
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
                                 )
                             }) : ''

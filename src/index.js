@@ -9,14 +9,12 @@ const showLoader = () => loader.classList.remove('hideLoader')
 
 const hideLoader = () => loader.classList.add('hideLoader')
 
-setTimeout(() => {
-  ReactDOM.render(
-      <React.StrictMode>
-          <App hideLoader={hideLoader} showLoader={showLoader} />
-      </React.StrictMode>,
-      document.getElementById('root')
-  )
-}, 4600)
+ReactDOM.render(
+  <React.StrictMode>
+      <App hideLoader={hideLoader} showLoader={showLoader} />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

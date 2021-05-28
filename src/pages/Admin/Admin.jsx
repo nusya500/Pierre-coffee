@@ -98,6 +98,8 @@ export const Admin = () => {
         }
     }
 
+    console.log(category)
+
     const logoutHandler = event => {
         event.preventDefault()
         auth.logout()

@@ -3,6 +3,7 @@
     min-height: 100vh;
     max-height: 100%;
     background: #d3a26d;
+    overflow: hidden;
 }
 
 
@@ -48,4 +49,13 @@
 
 .icon {
     font-size: 40px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.right > button {
+    margin-left: 10px;
 }

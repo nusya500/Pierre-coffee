@@ -30,6 +30,7 @@
 }
 
 .title {
+    text-align: left;
     display: inline-block;
     color: #000;
     font-size: 18px;

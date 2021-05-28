@@ -29,7 +29,7 @@ export const Item = ({ data, i }) => {
     }
 
     return (
-        <div className={Styles.item} data-aos="fade-left" data-aos-delay={i * 100}>
+        <div className={Styles.item} data-aos="fade-left" data-aos-delay={i * 50}>
             <img src={ Img } alt={ data.name } />
             <div className={Styles.desc}>
                 <button onClick={() => {showMore(data.id)}} className={Styles.category}>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Styles from './App.module.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { useRoutes } from './routes'
@@ -14,12 +14,9 @@ export const App = ({hideLoader}) => {
 	const isAuthentificated = !!status
 	const routes = useRoutes(isAuthentificated)
 
-	useEffect(() => {
-        hideLoader()
-        return () => {
-            hideLoader()
-        }
-    }, [hideLoader])
+	setTimeout(() => {
+		hideLoader()
+	}, 4600)
 	
 	return (
 		<AuthContext.Provider value={{

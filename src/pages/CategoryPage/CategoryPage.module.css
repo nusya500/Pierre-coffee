@@ -4,6 +4,7 @@
     max-height: 100%;
     background: #d3a26d;
     position: relative;
+    overflow: hidden;
 }
 
 .block {
