@@ -24,7 +24,9 @@ export const MainPage = ({ language }) => {
     return (
         <div className={Styles.mainPage}>
             <div className={Styles.block}>
-                <img src={Logo} alt="logo" />
+                <div className={Styles.logo}>
+                    <img src={Logo} alt="logo" />
+                </div>
                 <NavLink to="/menu">{language === 'RU' ? 'меню' : language === 'TR' ? 'menü' : language === 'EN' ? 'menu' : ''}</NavLink>
                 <select name="language" id="language" onChange={changeHandler}>
                     {

@@ -11,8 +11,15 @@
     align-items: center;
 }
 
-.block > img {
+.logo {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
     width: 250px;
+}
+
+.logo > img {
+    width: 100%;
 }
 
 .block > a {
@@ -40,7 +47,7 @@ option {
         padding: 0 20px;
     }
     
-    .block > img {
+    .logo {
         width: 100%;
     }
 
