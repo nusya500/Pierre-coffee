@@ -16,13 +16,13 @@ export const App = ({hideLoader}) => {
 
 	setTimeout(() => {
 		hideLoader()
-	}, 4600)
+	}, 3300)
 	
 	return (
 		<AuthContext.Provider value={{
 			status, login, logout, isAuthentificated
 		}}>
-			<Router >
+			<Router>
 				<div className={Styles.app}>
 					{ isAuthentificated }
 					{ routes }

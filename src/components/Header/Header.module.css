@@ -22,7 +22,7 @@
     font-size: 40px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .block > h2 {
         font-size: 25px;
     }

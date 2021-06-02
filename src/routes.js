@@ -8,13 +8,19 @@ import { CategoryPage } from './pages/CategoryPage/CategoryPage'
 import { CartPage } from './pages/CartPage/CartPage'
 import { Admin } from './pages/Admin/Admin'
 import { Auth } from './pages/Auth/Auth'
+import { useCategory } from './hooks/category.hook'
 // import { ItemPage } from './pages/ItemPage/ItemPage'
 
 export const useRoutes = (isAuthentificated) => {
     const { data } = useGet('main/getUpdate')
-    const categoryData = data.filter(
+    const language = JSON.parse(localStorage.getItem('language')) === null ? 'EN' : JSON.parse(localStorage.getItem('language'))
+    const { categoryData } = useCategory(data, language)
+    const categoryFiltered = categoryData.filter(
         (el) => el.subCategoryStatus === false
     )
+
+    console.log(language)
+    console.log(categoryData)
 
     if (isAuthentificated) {
         return (
@@ -28,16 +34,16 @@ export const useRoutes = (isAuthentificated) => {
         <div className={Styles.routes}>
             <Switch>
                 <Route path="/" exact>
-                    <MainPage />
+                    <MainPage language={language} />
                 </Route>
                 <Route path="/menu" exact>
-                    <MenuPage categoryData={categoryData} />
+                    <MenuPage language={language} categoryData={categoryFiltered} />
                 </Route>
                 <Route path="/menu/:category">
-                    <CategoryPage data={data} />
+                    <CategoryPage language={language} data={categoryData} />
                 </Route>
                 <Route path="/cart" exact>
-                    <CartPage />
+                    <CartPage language={language} />
                 </Route>
                 <Route path="/admin" exact>
                     <Auth />

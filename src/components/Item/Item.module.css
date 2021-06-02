@@ -1,4 +1,8 @@
 .item {
+    background: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 300px;
     position: relative;
     width: 23%;
     margin-right: 2.6%;
@@ -12,6 +16,8 @@
 }
 
 .item img {
+    object-fit: cover;
+    height: 80%;
     width: 100%;
     z-index: -1;
     border-top-left-radius: 10px;
@@ -19,9 +25,11 @@
 }
 
 .desc {
+    position: absolute;
+    bottom: 0;
     background: #fff;
     width: 100%;
-    transform: translateY(-20px);
+    /* transform: translateY(-20px); */
     padding: 15px 0 0 10px;
 }
 
@@ -30,6 +38,7 @@
 }
 
 .title {
+    padding-right: 10px;
     text-align: left;
     display: inline-block;
     color: #000;
@@ -56,13 +65,17 @@
     font-size: 18px;
 }
 
+.count > button {
+    padding: 0 5px;
+}
+
 .full {
     width: 100%;
     background: #fff;
     position: absolute;
     top: 0px;
     left: 0;
-    height: calc(100% - 20px);
+    height: calc(100%);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -114,7 +127,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     .item {
         width: 48%;
         margin-right: 4%;
@@ -133,7 +146,7 @@
     
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     .item {
         width: 100%;
         margin-right: 0;

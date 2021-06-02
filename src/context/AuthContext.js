@@ -4,5 +4,6 @@ export const AuthContext = createContext({
     token: null,
     login: false,
     logout: false,
-    isAuthentificated: false
+    isAuthentificated: false,
+    language: 'RU'
 })

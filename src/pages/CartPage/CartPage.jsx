@@ -4,7 +4,7 @@ import { Header } from '../../components/Header/Header'
 import { Message } from '../../components/Message/Message'
 import Styles from './CartPage.module.css'
 
-export const CartPage = () => {
+export const CartPage = ({ language }) => {
     const [show, setShow] = useState(false)
 
     const template = /(order)/
@@ -34,7 +34,7 @@ export const CartPage = () => {
 
     return (
         <div className={Styles.cartPage}>
-            <Header previous={'menu'} heading={ 'Ваши заказы' } order={false} setShow={setShow} />
+            <Header previous={'menu'} heading={ language === 'RU' ? 'Ваши заказы' : language === 'TR' ? 'Siparişleriniz' : language === 'EN' ? 'Your orders' : ''} order={false} setShow={setShow} />
             <div className="container">
                 {
                     orders.length === 0 ?
@@ -42,7 +42,9 @@ export const CartPage = () => {
                         <span className={`material-icons ${Styles.icon}`}>
                             search_off
                         </span>
-                        <h2>Заказов нет! Добавьте блюда из нашего меню</h2>
+                        <h2>
+                            { language === 'RU' ? 'Заказов нет! Добавьте блюда из нашего меню' : language === 'TR' ? 'Sipariş yok! Menümüzden yemekler ekleyin' : language === 'EN' ? 'No orders! Add dishes from menu' : ''}
+                        </h2>
                     </div> :
                     <div className={Styles.block}>
                         {
@@ -53,7 +55,7 @@ export const CartPage = () => {
                                     <div key={ i } className={Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
                                         <h3>{ data.name }</h3>
                                         <div className={Styles.right}>
-                                            <p>{ count } x { data.price } сом = { count * data.price } сом</p>
+                                            <p>{ count } x { data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : ''} = { count * data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : ''}</p>
                                             <button onClick={() => {deleteOrderItem(data.id)}}>
                                                 <span className={`material-icons ${Styles.delete}`}>
                                                     delete
@@ -69,14 +71,17 @@ export const CartPage = () => {
                 {
                     orders.length !== 0 ?
                     <div className={Styles.total}>
-                        <p>Итого: {total.reduce((a, b) => a + b, 0)} сом</p>
+                        <p>{language === 'RU' ? 'Итого' : language === 'TR' ? 'Toplam' : language === 'EN' ? 'Total' : ''}: {total.reduce((a, b) => a + b, 0)} {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : ''}</p>
                     </div> : ''
                 }
             </div>
             {
                 show ?
                 <Message 
-                    text={ 'Вы уверенны, что хотите удалить заказ?' }
+                    language={language}
+                    text={ 
+                        language === 'RU' ? 'Вы уверенны, что хотите удалить заказ?' : language === 'TR' ? 'Siparişi silmek istediğinizden emin misiniz?' : language === 'EN' ? 'Are you sure you want to delete the order?' : ''
+                    }
                     data={ [] }
                     func={ cancelOrder }
                     setShow={ setShow }

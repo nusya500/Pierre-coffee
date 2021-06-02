@@ -1,4 +1,8 @@
 .category {
+    background: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 250px;
     width: 23%;
     margin-right: 2.6%;
     margin-bottom: 2.6%;
@@ -11,6 +15,8 @@
 }
 
 .category > img {
+    object-fit: cover;
+    height: 80%;
     width: 100%;
     z-index: -1;
     border-top-left-radius: 10px;

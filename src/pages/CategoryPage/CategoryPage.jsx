@@ -5,12 +5,12 @@ import { Header } from '../../components/Header/Header'
 import { SubCategoryPage } from '../SubCategoryPage/SubCategoryPage'
 import Styles from './CategoryPage.module.css'
 
-export const CategoryPage = ({ data }) => {
+export const CategoryPage = ({ language, data }) => {
     const { category } = useParams()
     const categoryId = category.replace('category=', '')
 
     const categoryData = data.filter(el => el.id === +categoryId)[0] || [{ name: '' }]
-    
+
     return (
         <div className={Styles.categoryPage}>
             <Header
@@ -29,7 +29,7 @@ export const CategoryPage = ({ data }) => {
                         }
                     </div>
                 </div> : 
-                <SubCategoryPage subCategoryData={categoryData} />
+                <SubCategoryPage language={language} subCategoryData={categoryData} />
             }
         </div>
     )
