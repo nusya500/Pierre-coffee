@@ -6,7 +6,7 @@ import Styles from './MenuPage.module.css'
 export const MenuPage = ({ language, categoryData }) => {
     return (
         <div className={Styles.menuPage}>
-            <Header heading={ language === 'RU' ? 'Меню' : language === 'TR' ? 'Menü' : language === 'EN' ? 'Menu' : '' } />
+            <Header heading={ language === 'RU' ? 'Меню' : language === 'TR' ? 'Menü' : language === 'EN' ? 'Menu' : language === 'KG' ? 'Меню' : '' } />
             <div className="container">
                 <div className={Styles.block}>
                     {

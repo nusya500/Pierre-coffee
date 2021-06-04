@@ -132,6 +132,7 @@ export const Admin = () => {
         { type: 'text', name: 'name', placeholder: 'Название EN' },
         { type: 'text', name: 'nameRU', placeholder: 'Название RU' },
         { type: 'text', name: 'nameTR', placeholder: 'Название TR' },
+        { type: 'text', name: 'nameKG', placeholder: 'Название KG' },
         { type: 'text', name: 'pictureURL', placeholder: 'Изображение' },
     ]
 
@@ -183,9 +184,11 @@ export const Admin = () => {
         { type: 'text', name: 'name', placeholder: 'Название EN' },
         { type: 'text', name: 'nameRU', placeholder: 'Название RU' },
         { type: 'text', name: 'nameTR', placeholder: 'Название TR' },
+        { type: 'text', name: 'nameKG', placeholder: 'Название KG' },
         { type: 'text', name: 'description', placeholder: 'Описание EN' },
         { type: 'text', name: 'descriptionRU', placeholder: 'Описание RU' },
         { type: 'text', name: 'descriptionTR', placeholder: 'Описание TR' },
+        { type: 'text', name: 'descriptionKG', placeholder: 'Описание KG' },
         { type: 'text', name: 'pictureURL', placeholder: 'Изображение' },
         { type: 'text', name: 'weight', placeholder: 'Вес' },
         { type: 'number', name: 'price', placeholder: 'Стоимость' },

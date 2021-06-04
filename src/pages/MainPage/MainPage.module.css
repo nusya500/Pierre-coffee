@@ -1,6 +1,6 @@
 .mainPage {
     height: 100vh;
-    background: rgba(66, 180, 184, 0.5);
+    background: #a0d9db;
     display: grid;
     place-items: center;
 }

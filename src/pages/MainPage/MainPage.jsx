@@ -18,7 +18,8 @@ export const MainPage = ({ language }) => {
         { value: JSON.parse(localStorage.getItem('language')) === null ? 'EN' : JSON.parse(localStorage.getItem('language')) },
         { value: 'EN' },
         { value: 'RU' },
-        { value: 'TR' }
+        { value: 'TR' },
+        { value: 'KG' },
     ]
 
     return (
@@ -27,7 +28,7 @@ export const MainPage = ({ language }) => {
                 <div className={Styles.logo}>
                     <img src={Logo} alt="logo" />
                 </div>
-                <NavLink to="/menu">{language === 'RU' ? 'меню' : language === 'TR' ? 'menü' : language === 'EN' ? 'menu' : ''}</NavLink>
+                <NavLink to="/menu">{language === 'RU' ? 'меню' : language === 'TR' ? 'menü' : language === 'EN' ? 'menu' : language === 'KG' ? 'меню' : ''}</NavLink>
                 <select className={Styles.select} name="language" id="language" onChange={changeHandler}>
                     {
                         languages.map(({ value }, i) => {

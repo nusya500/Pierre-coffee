@@ -20,8 +20,8 @@ export const Message = ({ language, text, data, func, setShow }) => {
                     ''
                 }
                 <div className={Styles.buttons}>
-                    <button onClick={() => {func()}}>{language === 'RU' ? 'Да' : language === 'TR' ? 'Evet' : language === 'EN' ? 'Yes' : ''}</button>
-                    <button onClick={() => {setShow(false)}}>{language === 'RU' ? 'Нет' : language === 'TR' ? 'Hayır' : language === 'EN' ? 'No' : ''}</button>
+                    <button onClick={() => {func()}}>{language === 'RU' ? 'Да' : language === 'TR' ? 'Evet' : language === 'EN' ? 'Yes' : language === 'KG' ? 'Ооба' : ''}</button>
+                    <button onClick={() => {setShow(false)}}>{language === 'RU' ? 'Нет' : language === 'TR' ? 'Hayır' : language === 'EN' ? 'No' : language === 'KG' ? 'Жок' : ''}</button>
                 </div>
             </div>
         </div>

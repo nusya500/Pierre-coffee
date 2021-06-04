@@ -72,7 +72,7 @@ button {
 .loading {
     display: inline-block;
     font-size: 0;
-    border: 10px solid #fff;
+    border: 10px solid #ccc;
     border-top: 10px solid #006838;
     border-radius: 50%;
     width: 50px;
