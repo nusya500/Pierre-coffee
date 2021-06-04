@@ -129,8 +129,10 @@ export const Admin = () => {
     }, [escHandler])
 
     const categoryCreate = [
-        { type: 'text', name: 'name', placeholder: 'Название' },
-        { type: 'text', name: 'pictureUrl', placeholder: 'Изображение' },
+        { type: 'text', name: 'name', placeholder: 'Название EN' },
+        { type: 'text', name: 'nameRU', placeholder: 'Название RU' },
+        { type: 'text', name: 'nameTR', placeholder: 'Название TR' },
+        { type: 'text', name: 'pictureURL', placeholder: 'Изображение' },
     ]
 
     const subCategoryCreate = [
@@ -178,8 +180,12 @@ export const Admin = () => {
             ],
             name: 'category',
         },
-        { type: 'text', name: 'name', placeholder: 'Название' },
-        { type: 'text', name: 'description', placeholder: 'Описание' },
+        { type: 'text', name: 'name', placeholder: 'Название EN' },
+        { type: 'text', name: 'nameRU', placeholder: 'Название RU' },
+        { type: 'text', name: 'nameTR', placeholder: 'Название TR' },
+        { type: 'text', name: 'description', placeholder: 'Описание EN' },
+        { type: 'text', name: 'descriptionRU', placeholder: 'Описание RU' },
+        { type: 'text', name: 'descriptionTR', placeholder: 'Описание TR' },
         { type: 'text', name: 'pictureURL', placeholder: 'Изображение' },
         { type: 'text', name: 'weight', placeholder: 'Вес' },
         { type: 'number', name: 'price', placeholder: 'Стоимость' },

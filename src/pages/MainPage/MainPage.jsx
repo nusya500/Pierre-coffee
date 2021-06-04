@@ -28,7 +28,7 @@ export const MainPage = ({ language }) => {
                     <img src={Logo} alt="logo" />
                 </div>
                 <NavLink to="/menu">{language === 'RU' ? 'меню' : language === 'TR' ? 'menü' : language === 'EN' ? 'menu' : ''}</NavLink>
-                <select name="language" id="language" onChange={changeHandler}>
+                <select className={Styles.select} name="language" id="language" onChange={changeHandler}>
                     {
                         languages.map(({ value }, i) => {
                             return (

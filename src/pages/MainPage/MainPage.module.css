@@ -1,6 +1,6 @@
 .mainPage {
     height: 100vh;
-    background: #d3a26d;
+    background: rgba(66, 180, 184, 0.5);
     display: grid;
     place-items: center;
 }
@@ -31,7 +31,7 @@
     font-weight: bold;
 }
 
-select {
+.select {
     background: transparent;
     border: none;
     color: #fff;

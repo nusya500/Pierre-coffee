@@ -50,7 +50,7 @@ export const CartPage = ({ language }) => {
                         {
                             orders ?
                             orders.map(({ count, data }, i) => {
-                                total.push(count * data.price)
+                                total.push(data ? count * data.price : '')
                                 return (
                                     <div key={ i } className={Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
                                         <h3>{ data.name }</h3>
