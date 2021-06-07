@@ -6,14 +6,15 @@ import Styles from './CartPage.module.css'
 
 export const CartPage = ({ language }) => {
     const [show, setShow] = useState(false)
+    const [hide, setHide] = useState('')
 
     const template = /(order)/
     const items = Object.keys(localStorage).filter(el => el.match(template))
-    const orders = items.map(el => {
+    let orders = items.map(el => {
         return JSON.parse(localStorage[el])
     })
 
-    console.log(orders)
+    console.log()
 
     let history = useHistory()
 
@@ -26,7 +27,8 @@ export const CartPage = ({ language }) => {
     }
 
     const deleteOrderItem = (id) => {
-        history.goBack()
+        // history.goBack()
+        setHide(id)
         localStorage.removeItem(`order${id}`)
     }
 
@@ -52,7 +54,7 @@ export const CartPage = ({ language }) => {
                             orders.map(({ count, data }, i) => {
                                 total.push(data ? count * data.price : '')
                                 return (
-                                    <div key={ i } className={Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
+                                    <div key={ i } className={hide === data.id ? `${Styles.item} ${Styles.hide}` : Styles.item} data-aos="fade-down" data-aos-delay={i * 100}>
                                         <h3>{ data.name }</h3>
                                         <div className={Styles.right}>
                                             <p>{ count } x { data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''} = { count * data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>

@@ -5,10 +5,16 @@ import { App } from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const loader = document.querySelector('#loader')
+const root = document.querySelector('#root')
 
-const showLoader = () => loader.classList.remove('hideLoader')
+const showLoader = () => {
+  loader.classList.remove('hideLoader')
+}
 
-const hideLoader = () => loader.classList.add('hideLoader')
+const hideLoader = () => {
+  loader.classList.add('hideLoader')
+  root.classList.add('root')
+}
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useHttp } from "./http.hook"
 
-export const useGet = (url) => {
+export const useGet = (url, remove) => {
     const { loading, request, API_URL } = useHttp()
     const [data, setData] = useState([])
 
@@ -9,14 +9,14 @@ export const useGet = (url) => {
         let mounted = true
         try {
             if (mounted) {
-                request(`${API_URL}${url}`, "GET", null)
+                request(remove ? `${url}` : `${API_URL}${url}`, "GET", null)
                     .then(result => {
                         setData(result)
                     })
             }
         } catch (e) {}
         return () => mounted = false
-    }, [request, API_URL, url])
+    }, [request, API_URL, url, remove])
 
     return { data, loading }
 }

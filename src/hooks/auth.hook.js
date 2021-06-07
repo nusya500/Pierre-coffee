@@ -11,7 +11,7 @@ export const useAuth = () => {
     const [code, setCode] = useState('')
 
     const login = useCallback((status, profile) => {
-        const hashed = JSON.parse(localStorage.getItem('userCode'))
+        const hashed = {hashed: '12345'}
         setCode(hashed)
         setProfile(profile)
         setStatus(status)
