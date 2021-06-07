@@ -73,7 +73,7 @@ export const CartPage = ({ language }) => {
                 {
                     orders.length !== 0 ?
                     <div className={Styles.total}>
-                        <p>{language === 'RU' ? 'Обслуживание' : language === 'TR' ? 'Servis' : language === 'EN' ? 'Service' : language === 'KG' ? 'Тейлөө кызматы' : ''}: {total.reduce((a, b) => a + b, 0)*10/100} {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
+                        <p>{language === 'RU' ? 'Обслуживание 10%' : language === 'TR' ? 'Servis 10%' : language === 'EN' ? 'Service 10%' : language === 'KG' ? 'Тейлөө кызматы 10%' : ''}: {total.reduce((a, b) => a + b, 0)*10/100} {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
                         <p>{language === 'RU' ? 'Итого' : language === 'TR' ? 'Toplam' : language === 'EN' ? 'Total' : language === 'KG' ? 'Итого' : ''}: {total.reduce((a, b) => a + b, 0) + total.reduce((a, b) => a + b, 0)*10/100} {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
                     </div> : ''
                 }
