@@ -54,7 +54,7 @@ export const Item = ({ language, data, i }) => {
                 </h4>
                 <div className={Styles.text}>
                     <p>{ data.description }</p>
-                    <p>{ data.weight } {language === 'RU' ? 'г.' : language === 'TR' ? 'g.' : language === 'EN' ? 'g.' : language === 'KG' ? 'г.' : ''}</p>
+                    <p>{ data.weight }</p>
                 </div>
             </div>
         </div>

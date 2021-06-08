@@ -173,7 +173,7 @@ export const Admin = () => {
                 {
                     name: 'pictureURL',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Фотография', id: '' }],
                         images.data[0] ? images.data[0].data.map(({ Name, id }) => {
                             return { label: Name, id: id }
                         }) : '',
@@ -190,7 +190,7 @@ export const Admin = () => {
                 {
                     name: 'parent',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Родительская категория', id: '' }],
                         data
                             .filter((el) => el.subCategoryStatus === false)
                             .map(({ name, id }) => {
@@ -206,7 +206,7 @@ export const Admin = () => {
                 {
                     name: 'child',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Дочерняя категория', id: '' }],
                         data
                             .filter(
                                 (el) =>
@@ -229,7 +229,7 @@ export const Admin = () => {
                 {
                     name: 'category',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Подкатегория', id: '' }],
                         data
                             .filter((el) => el.subCategoryStatus === true)
                             .map(({ name, id }) => {
@@ -253,7 +253,7 @@ export const Admin = () => {
 							{
 									name: 'pictureURL',
 									options: [
-											[{ label: 'Не выбрано', id: '' }],
+											[{ label: 'Фотография', id: '' }],
 											images.data[0] ? images.data[0].data.map(({ Name, id }) => {
 												return { label: Name, id: id }
 											}) : '',
@@ -273,7 +273,7 @@ export const Admin = () => {
                 {
                     name: 'category',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Категория', id: '' }],
                         data.map(({ name, id }) => {
                             return { label: name, id: id }
                         }),
@@ -290,7 +290,7 @@ export const Admin = () => {
                 {
                     name: 'item',
                     options: [
-                        [{ label: 'Не выбрано', id: '' }],
+                        [{ label: 'Блюдо', id: '' }],
                         items.data.map(({ name, id }) => {
                             return { label: name, id: id }
                         }),
