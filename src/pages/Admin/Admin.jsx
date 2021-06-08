@@ -76,6 +76,7 @@ export const Admin = () => {
         try {
             await request(`${API_URL}item/create`, 'POST', { ...item })
             successMessage(`Блюдо ${item.name} успешно создано!`)
+            window.location.reload()
         } catch (e) {
             errorMessage(e.message)
         }
@@ -403,6 +404,10 @@ export const Admin = () => {
                                                                                       value={
                                                                                           id
                                                                                       }
+                                                                                    //   style={
+                                                                                    //     //   { backgroundImage: `url(https://drive.google.com/uc?export=view&id=${id})` }
+                                                                                    //     // { background: 'red' }
+                                                                                    //   }
                                                                                   >
                                                                                       {
                                                                                           label

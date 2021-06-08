@@ -12,6 +12,35 @@
     row-gap: 30px;
 }
 
+.search {
+    margin-bottom: 20px;
+}
+
+.input {
+    font-size: 16px;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-border: none;
+    border: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 15px 10px 15px;
+    color: #000;
+    font-size: 20px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.input::placeholder {
+    color: #757575;
+}
+
+.input:focus::placeholder {
+    color: #fff;
+}
+
 @media screen and (max-width: 900px) {
     .block {
         grid-template-columns: repeat(3, 1fr);

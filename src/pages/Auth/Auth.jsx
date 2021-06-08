@@ -39,7 +39,7 @@ export const Auth = () => {
                 errorMessage('Поля не должны быть пустыми!')
             } else if (cyrillicPattern.test(form.login) === true || cyrillicPattern.test(form.password)) {
                 errorMessage('Нельзя вводить русские символы!')
-            } else if (form.login === 'pierre' || form.password === 'coffee123') {
+            } else if (form.login === 'pierre' && form.password === 'coffee123') {
                 if (mounted) {
                     const data = {
                         token: 'qwerty12345',
