@@ -5,11 +5,14 @@
     background: #a0d9db;
     position: relative;
     overflow: hidden;
+    padding-bottom: 30px;
 }
 
 .block {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
 }
 
 .loading {
@@ -19,4 +22,22 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .block {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .block {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .block {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
