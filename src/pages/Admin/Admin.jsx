@@ -230,10 +230,8 @@ export const Admin = () => {
                 {
                     name: 'category',
                     options: [
-                        [{ label: 'Подкатегория', id: '' }],
-                        data
-                            .filter((el) => el.subCategoryStatus === true)
-                            .map(({ name, id }) => {
+                        [{ label: 'Категория', id: '' }],
+                        data.map(({ name, id }) => {
                                 return { label: name, id: id }
                             }),
                     ],

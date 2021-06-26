@@ -35,13 +35,19 @@ export const Item = ({ language, data, i }) => {
                 <button onClick={() => {showMore(data.id)}} className={Styles.category}>
                     <h3 className={Styles.title}>{ data.name }</h3>
                 </button>
-                <p>{ data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
-                <div className={Styles.add}>
+                <div className={Styles.block}>
+                    <p>{ data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
                     <p className={Styles.count}>
-                        <button onClick={() => {count !== 1 ? setCount(count - 1) : setCount(1)}}>{'< '}</button>
+                        <button onClick={() => {count !== 1 ? setCount(count - 1) : setCount(1)}}>
+                            <span className={`${Styles.minus} material-icons`}>remove_circle_outline</span>
+                        </button>
                         { count }
-                        <button onClick={() => {setCount(count + 1)}}>{' >'}</button>
+                        <button onClick={() => {setCount(count + 1)}}>
+                            <span className={`${Styles.minus} material-icons`}>add_circle_outline</span>
+                        </button>
                     </p>
+                </div>
+                <div className={Styles.add}>
                     <button onClick={() => {orderProduct(data.name, data.id)}}>{language === 'RU' ? 'Заказать' : language === 'TR' ? 'Sipariş ver' : language === 'EN' ? 'Order' : language === 'KG' ? 'Заказать' : ''}</button>
                 </div>
             </div>
