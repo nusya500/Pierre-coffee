@@ -4,6 +4,8 @@ import { Header } from '../../components/Header/Header'
 import { Message } from '../../components/Message/Message'
 import Styles from './CartPage.module.css'
 
+import Search from './../../assets/images/search_off_white_24dp.svg'
+
 export const CartPage = ({ language }) => {
     const [show, setShow] = useState(false)
     const [hide, setHide] = useState('')
@@ -42,7 +44,7 @@ export const CartPage = ({ language }) => {
                     orders.length === 0 ?
                     <div className={Styles.empty}>
                         <span className={`material-icons ${Styles.icon}`}>
-                            search_off
+                            <img src={ Search } alt="arrow" />
                         </span>
                         <h2>
                             { language === 'RU' ? 'Заказов нет! Добавьте блюда из нашего меню' : language === 'TR' ? 'Sipariş yok! Menümüzden yemekler ekleyin' : language === 'EN' ? 'No orders! Add dishes from menu' : language === 'KG' ? 'Заказов нет! Добавьте блюда из нашего меню' : ''}

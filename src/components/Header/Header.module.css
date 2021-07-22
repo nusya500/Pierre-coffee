@@ -19,7 +19,10 @@
 
 .icon {
     color: #fff;
-    font-size: 40px;
+}
+
+.icon > img {
+    width: 40px;
 }
 
 @media screen and (max-width: 450px) {
@@ -29,5 +32,9 @@
     
     .icon {
         font-size: 25px;
+    }
+
+    .icon > img {
+        width: 25px;
     }
 }
