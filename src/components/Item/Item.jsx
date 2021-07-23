@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useSuccess } from './../../hooks/success.hook'
 import Styles from './Item.module.css'
 
+import Plus from './../../assets/images/add_circle_outline_black_24dp.svg'
+import Minus from './../../assets/images/remove_circle_outline_black_24dp.svg'
 // import Img from './../../assets/images/item.png'
 
 import { toast } from 'react-toastify'
@@ -39,11 +41,15 @@ export const Item = ({ language, data, i }) => {
                     <p>{ data.price } {language === 'RU' ? 'сом' : language === 'TR' ? 'som' : language === 'EN' ? 'som' : language === 'KG' ? 'сом' : ''}</p>
                     <p className={Styles.count}>
                         <button onClick={() => {count !== 1 ? setCount(count - 1) : setCount(1)}}>
-                            <span className={`${Styles.minus} material-icons`}>remove_circle_outline</span>
+                            <span className={`${Styles.minus} material-icons`}>
+                                <img src={ Minus } alt="arrow" />
+                            </span>
                         </button>
                         { count }
                         <button onClick={() => {setCount(count + 1)}}>
-                            <span className={`${Styles.minus} material-icons`}>add_circle_outline</span>
+                            <span className={`${Styles.minus} material-icons`}>
+                                <img src={ Plus } alt="arrow" />
+                            </span>
                         </button>
                     </p>
                 </div>
