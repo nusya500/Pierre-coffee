@@ -10,6 +10,7 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
     row-gap: 30px;
+    align-items: flex-start;
 }
 
 .search {
@@ -41,19 +42,19 @@
     color: #fff;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .block {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .block {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     .block {
         grid-template-columns: repeat(1, 1fr);
     }
